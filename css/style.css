@@ -1,0 +1,492 @@
+/* INDIVIDUAL PROJECT SI 339 - SARA BALDOVINO */
+/* STYLING ALL HTML FILES */
+
+/* STEP 1) Create a :root with colors for light mode */
+/* Taking the colors' code of both universities (did this in Canva to get the code from the two logos) */
+:root {
+    --primary-color: #020164; 
+    --secondary-color: #fecf0c; 
+    --background-color: #fdfdff; 
+    --text-color: #141353; 
+    --button-text: #ffffff; 
+    --table-alternate:#e4e4e4;
+    --link-color: #8AB4F8;
+}
+
+/* ---------------------------------------------------- */
+/* STEP 2) General Styling of body, h1, h2 and footer */
+
+body {
+    font-family: 'Times New Roman', Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 32px;
+    text-align: center;
+    color: var(--primary-color);
+    line-height: 64px;
+}
+
+/* I want to have the h1 of index.html (so basically my name) in cursive and in Lucida Handwriting font family - therefore use an id for that specific h1 of index.html */
+#home_heading {
+    font-family: "Lucida Handwriting", cursive;
+    font-style: italic;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: var(--primary-color);
+    color: var(--button-text);
+    border-radius: 5px;
+}
+
+footer a{
+    margin: 0 10px;
+}
+
+.icons{
+    /* Getting rid of the automatic underscore of links - there was an underscore right on the side of the linkedin icon */
+    text-decoration: none;
+}
+
+/* adjusting colors of links because they didn't pass the accessibility check  */
+a{
+    color: var(--link-color);
+}
+
+/* ----------------------------------------- */
+/* STEP 3) Nav Bar Styling */
+
+nav {
+    background-color: var(--primary-color);
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: var(--button-text);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* addessing both hover and focus states with their respective pseudoclasses. */
+nav ul li a:hover,
+nav ul li a:focus {
+    color: var(--secondary-color);
+}
+
+/* --------------------------------- */
+/* STEP 4) Styling Container class  */
+
+/* Having the same class .container to style everything together. */
+.container {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 1200px;
+    background-color: var(--background-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 8px;
+}
+
+
+/* --------------------------------- */
+/* STEP 5) Image styling */
+/* Taking lots of inspiration from one of the example given */
+
+header img {
+    display: block;
+    margin: 20px auto;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+}
+
+.uni_images, .um_images_mine {
+    display: grid;
+    /* automatically fit the nb. of columns to fit inside the container, where each column take a min width of 150px up to available space 1fr */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.uni_images a, .um_images_mine a {
+    /* re,ove underline from links */
+    text-decoration: none;
+    color: var(--text-color);
+    text-align: center;
+    display: flex;
+    /* arranging child elements vertically */
+    flex-direction: column;
+    /* cernter child elements horizontally inside <a> */
+    align-items: center;
+}
+
+.uni_images img, .um_images_mine img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid #333;
+    /* image covering the dimension without distorting the img */
+    object-fit: cover;
+}
+
+.uni_images img:hover, .uni_images img:focus, .um_images_mine img:hover, .um_images_mine img:focus {
+    transform: scale(1.05);
+}
+
+/* Text below each image */
+.uni_images p, .um_images_mine p {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* ------------------------------------------------- */
+/* STEP 6) TABLE Styling (ie_uni.html) */
+
+/* Step 6 is concerned with the main table styling, like borders, lines and alternating colors. Whilst step 7 is concerned with the dropdown menu where the table is the content of it. (Drop down was implemented later) */
+.section_ieu_courses table {
+    /* taking the full width */
+    width: 100%;
+    /* using collapse uderwise the cells would be separated */
+    border-collapse: collapse;
+}
+
+.section_ieu_courses th,
+.section_ieu_courses td {
+    /* styling the lines of the table */
+    border: 1px solid var(--primary-color); 
+    padding: 10px;
+    text-align: left;
+}
+
+.section_ieu_courses th {
+    /* adding background color in the top row, basically the titles and make them bold as well. */
+    background-color: var(--primary-color);
+    color: var(--button-text); 
+    font-weight: bold;
+}
+
+/* Alternating colors in the table's row to make it more easy to read */
+.section_ieu_courses tr:nth-child(even) {
+    background-color: var(--table-alternate); 
+}
+
+/* --------------------------------------------- */
+/* STEP 7) Styling of the Table and Dropdown Menu ie_uni.html */
+
+.section_ieu_courses {
+    max-height: 400px;
+    /* making the table "scrollable" both vertically and horizontally */
+    overflow-y: auto;
+    overflow-x: auto;
+    padding: 10px;
+    /* hiding by default */
+    display: none; 
+    margin-top: 10px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+.dropdown_header {
+    /* making the dropdown header class a flex container */
+    display: flex;
+    /* aligning the flex container and its child elements */
+    align-items: center;
+    cursor: pointer;
+    color: var(--primary-color);
+    /* adding margin top space - before everything was crowded */
+    margin-top: 20px;
+}
+
+.dropdown_header:hover, .dropdown_header:focus {
+    /* have an underline of the same color of h2 when hovering and focusing on the dropdown menu  */
+    border-bottom: 2px solid var(--primary-color);
+}
+
+/* Style for the arrow icon */
+#dropdown_arrow {
+    margin-left: 10px;
+}
+
+#dropdown_arrow.rotate {
+    /* Rotating the arrow by 180 degrees */
+    /* up when the dropdown is closed, down when the table shows */
+    transform: rotate(180deg);
+}
+
+
+/* ------------------------------------------- */
+/* STEP 8) Dark Mode Media Query */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary-color: #a8a8f3; 
+        --secondary-color: #fecf0c; 
+        /* #6c63ff */
+        --background-color: #2b2b3b; 
+        --text-color: #e4e4f1; 
+        --button-text: #1e1e2f; 
+        --table-alternate: #3c3c4d; 
+        --link-color: #fff;
+    }
+
+    /* Had to change the color for the links in the footer otherwise it would have never passed the accessibility tests. Took quite a while to get the dark mode color palette that passed the tests.  */
+    footer a{
+        color: #39003f;
+    }
+}
+
+/* ------------------------------------------- */
+/* STEP 9) Styling Filter Buttons */
+.filter_buttons {
+    margin-bottom: 10px;
+}
+
+.filter_buttons button {
+    margin-right: 5px;
+    padding: 5px 10px;
+    background-color: var(--primary-color);
+    color: var(--button-text);
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* adding hover and focus effects (turn the background yellow (light mode) */
+.filter_buttons button:hover, .filter_buttons button:focus {
+    background-color: var(--secondary-color);
+}
+
+/* dropdown container for Filter by Year Button */
+.dropdown {
+    /* positioning child element inside the dropdown container */
+    position: relative;
+    display: inline-block;
+}
+
+/* styling the inside of the dropdown button*/
+.dropdown_content {
+    /* hiding content by default */
+    display: none;
+    position: absolute;
+    background-color: var(--background-color);
+    border-radius: 3px;
+}
+
+/* <a> links to year 2 and year 3 of the dropdown button filter by year*/
+.dropdown_content a {
+    color: var(--text-color);
+    /* adding padding, otherwise looks awful */
+    padding: 5px 10px;
+    /* text-decoration: none to remove the underline of the links */
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color when hover and focus */
+.dropdown_content a:hover, .dropdown_content a:focus {
+    /* applying the same background of the rows alternate in the table */
+    background-color: var(--table-alternate);
+}
+
+/* display the dropdown year 2 and year 3 when hover and focus */
+.dropdown:hover .dropdown_content, .dropdown:focus .dropdown_content {
+    display: block;
+}
+
+/* ---------------------------------------- */
+/* STEP 10) Styling the skills bar (language.html) */
+
+/* Container for skill bars */
+.container.skills_container {
+    /* taking full width */
+  width: 100%; 
+}
+
+.skills {
+  text-align: right; 
+  padding-top: 10px; 
+  padding-bottom: 10px; 
+  color: var(--button-text); 
+}
+
+#italian_skills {width: 100%; background-color:var(--primary-color);} 
+#english_skills {width: 95%; background-color: var(--primary-color);} 
+#spanish_skills {width: 80%; background-color: var(--primary-color);} 
+  
+
+/* --------------------------------------------- */
+/* STEP 11) TIMELINE STYLING */
+/* followinf the video (check SOIs in the report) */
+
+.timeline ul{
+    padding: 50px 0;
+}
+
+.timeline ul li{
+    /* removing the default bullet points from the list */
+    list-style: none;
+    position: relative;
+    width: 6px;
+    margin: 0 auto;
+    padding-top: 50px;
+    color: var(--button-text);
+    background-color: var(--table-alternate);
+}
+
+.timeline time{
+    display: block;
+    font-size: 22px;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.timeline ul li:after{
+    /* creating empty pseudo-element */
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    /* adjusting the dot to be perfectly centered */
+    transform: translateX(-50%);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    /* getting the same color of the parent */
+    background-color: inherit;
+    z-index: 1;
+}
+
+.timeline ul li div{
+    position: relative;
+    bottom: 0;
+    width:400px;
+    padding: 15px;
+    background-color: var(--primary-color);
+    opacity: 0;
+}
+
+/* targeting odd number childs */
+.timeline ul li:nth-child(odd) div{
+    left: 45px;
+    transform: translateX(200px);
+}
+
+/* targeting even number childs */
+.timeline ul li:nth-child(even) div{
+    left: calc(-400px - 45px + 6px);
+    transform: translateX(-200px);
+}
+
+/* apply style to in view elements */
+.timeline ul li.in-view:after{
+    /* change color of the dot when scrolling */
+    background-color: var(--secondary-color);
+}
+
+
+.timeline ul li.in-view div{
+    transform: none;
+    opacity:1;
+}
+
+/* using media queries to update to different screen sizes */
+/* I'm aware that using min-width could be better, but I tried and didn't work as I wanted, so I kept the code from the video */
+@media screen and (max-width: 900px){
+    .timeline ul li div{
+        width: 250px;
+    }
+
+
+    .timeline ul li:nth-child(even) div{
+        left:calc(-250px - 45px - 6px);
+    }
+}
+
+
+@media screen and (max-width: 600px){
+    .timeline ul li {
+        margin-left: 20px;
+        width: 250px;
+    }
+
+
+    .timeline ul li div{
+        width: calc(100vw - 90px);
+    }
+   
+    .timeline ul li:nth-child(even) div{
+        left: 45px;
+    }
+}
+
+/* ------------------------------------------ */
+/* STEP 12) Transitions and Transformations */
+
+/* Apply hover and focus effects for all sections (e.g., .container, .section, and images) */
+.container:hover, .container:focus,
+.section_info:hover, .section_info:focus,
+.section_um_me:hover, .section_um_me:focus,
+.skills_container:hover, .skills_container:focus {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+/* Images in .uni_images and .um_images_mine */
+.uni_images img:hover, .uni_images img:focus,
+.um_images_mine img:hover, .um_images_mine img:focus {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+
+/* Dropdown header in IE University page */
+.dropdown_header:hover, .dropdown_header:focus {
+    border-bottom: 2px solid var(--primary-color);
+    transition: border-bottom 0.3s ease, transform 0.3s ease;
+}
+
+/* Timeline elements */
+.timeline ul li:hover, .timeline ul li:focus {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+
+/* ---------------------------------------- */
+/* STEP 13) Reduced Motion with Media Query */
+/* using universal selector and setting transform and transition to none */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transform: none;
+        transition: none;
+    }
+}
+    
+

@@ -1,0 +1,101 @@
+<!-- INDIVIDUAL PROJECT SI 339 - SARA BALDOVINO -->
+<!-- INDEX PAGE is the home page (1st page) -->
+<!-- CHECK SKETCH (ONE NOTE) -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    
+    <!-- Link to later have the LinkedIn and Email Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- For h1#home_heading animation -->
+    <script src="https://cdn.jsdelivr.net/npm/vara@1.4.0/dist/vara.min.js"></script>
+
+    <!-- LINK TO CSS  -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<!-- --------------------------- -->
+<!-- STEP 1) NAV BAR -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="ie_uni.html">IE University</a></li>
+            <li><a href="um_uni.html">UM University</a></li>
+            <li><a href="professional_exp.html">Professional Experiences</a></li>
+            <li><a href="languages.html">Languages</a></li>
+            <li><a href="additional_info.html">Additional Information</a></li>
+        </ul>
+    </nav>
+
+<!-- --------------------------- -->
+<!-- STEP 2) HEADER "About me"-->
+    <header>
+        <!-- Giving an id to h1 of index.html because I want to apply later on a unique style to only this one h1 -->
+        <!-- style display none allows to at the beginning not display the name and later on handwrite it with Vera  -->
+        <!-- <h1 id="home_heading" style="display: none;">Sara Baldovino</h1> -->
+        <h1 id="home_heading">Sara Baldovino</h1>
+        <img src="images/sb_image.webp" alt="A photo of myself">
+    </header>
+
+    <div class="container" id="container_index" data-tilt data-tilt-glare data-tilt-max-glare="0.8">
+        <p> <strong> About Me </strong> 
+        <p>Hey there! I’m a 4th-year student of Business Administration and Data Analytics, blending these worlds at IE University. Right now, I’m on an academic adventure in the U.S., expanding my skills at the University of Michigan’s School of Information.</p>    
+        <p>From hands-on internships at VULPIX, BBVA, and Deutsche Bank, I’ve gained a toolkit of data-driven decision-making, project management, and strategic marketing — skills I love using to turn insights into impact. Every project has been a new chapter, teaching me the power of collaboration and the art of solving real-world problems.</p>
+        <p>I’m all about pushing boundaries, learning endlessly, and making a difference wherever I go. Let’s connect and see what we can create together!</p>
+    </div>
+
+<!-- --------------------------- -->
+<!-- STEP 3) FOOTER (email address + linkedIn account) -->
+    
+    <!-- CODE THAT I TRIED BEFORE (NOT WORKING TO GET THE ICONS) -->
+    <!-- <footer>
+        <p>Connect with me on 
+            <a href="https://www.linkedin.com/in/sara-baldovino-8b31631a6" target="_blank">LinkedIn</a> 
+            
+            <a href="https://www.linkedin.com/in/sara-baldovino-8b31631a6" aria-label="LinkedIn">
+                <i class="fa fa-linkedin-square" style="font-size:36px"></i>
+            </a> 
+            or send me an email at
+
+            <a href="sarabaldovino02@gmail.com" target="_blank">Email</a> 
+            
+            <a href="sarabaldovino02@gmail.com" aria-label="email">
+                <i class="fa-solid fa-envelope"></i>
+                <i class="fa-solid fa-envelope" aria-hidden="true"> 
+                    ::before
+                </i>
+            </a> 
+        </p>
+    </footer> -->
+
+    <!-- Code from ChatGPT that managed to get the icons -->
+    <footer>
+        <!-- LinkedIn Icon -->
+        <a href="https://www.linkedin.com/in/sara-baldovino-8b31631a6" class="icons" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        
+        <!-- Email Icon -->
+        <a href="mailto:sarabaldovino02@gmail.com" aria-label="Email">
+          <i class="fas fa-envelope" ></i>
+        </a>
+    </footer>
+      
+<!-- --------------------------- -->
+<!-- STEP 4) LINK TO THE JAVASCRIPT FILE -->
+    <!-- Following the video - linking to vanilla-tilt to use that library in JavaScript -->
+    <script type="text/javascript" src="js/vanilla-tilt.js"> </script>
+
+    <!-- Link to the javascript that contains the code for vanilla tilt effect -->
+    <script src="js/vanilla.js"> </script> 
+
+</body>
+</html>

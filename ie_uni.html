@@ -1,0 +1,212 @@
+<!-- INDIVIDUAL ASSIGNMENT SI 339 - SARA BALDOVINO -->
+<!-- ie_uni.html is the 2nd page -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IE University</title>
+
+    <!-- Link first the font awesome library to later have the LinkedIn and Email Icons + dropdown menu arrow -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Reference to Lightbox.css to have the same effect of the tea images of wekk 11-->
+    <link href="dist/css/lightbox.css" rel="stylesheet" />
+
+    <!-- LINK TO MY CSS  -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+<!-- ------------------------------------------- -->
+    <!-- STEP 1) NAV BAR -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="ie_uni.html">IE University</a></li>
+            <li><a href="um_uni.html">UM University</a></li>
+            <li><a href="professional_exp.html">Professional Experiences</a></li>
+            <li><a href="languages.html">Languages</a></li>
+            <li><a href="additional_info.html">Additional Information</a></li>
+        </ul>
+    </nav>
+
+<!-- ------------------------------------------- -->
+<!-- STEP 2) HEADER IE University -->
+    <header>
+        <h1>IE University</h1>
+    </header>
+
+<!-- ------------------------------------------- -->
+<!-- STEP 3) Have one container with the General Information about IEU -->
+    <div class="container">
+        
+        <div class="section_info">
+            <h2>General Information</h2>
+                <!-- try to get the ranking with javascript so I don't have to update it manually -->
+                <!-- was impossible to get the ranking so linking to a page where they can be looked up. -->
+                <li><strong>Ranking:</strong> 
+                    <a href="https://www.ie.edu/business-school/rankings/" target="_blank">IE University's Rankings</a> 
+                </li>
+                <li><strong>Campuses:</strong> 
+                    <a href="https://www.ie.edu/university/about/study-in-segovia/" target="_blank">Segovia, Spain</a> 
+                    & 
+                    <a href="https://www.ie.edu/university/about/study-in-madrid/ie-tower/" target="_blank">Madrid, Spain</a> 
+                </li>
+        </div>
+
+        <!-- STEP 3.1) Adding Pictures and Adding a LightBox Effect -->
+        <div class="uni_images">
+            <a href="images/ieu_logo.jpeg"  data-lightbox="uni_pictures" data-title="IE University Logo">
+                <img src="images/ieu_logo.jpeg" alt="IE University Logo">
+            </a>
+            <a href="images/segovia_entrance.jpg"  data-lightbox="uni_pictures" data-title="IE University Segovia Campus Entrance">
+                <img src="images/segovia_entrance.jpg" alt="IE University Segovia Campus Entrance">
+            </a>
+            <a href="images/segovia_hall.webp"  data-lightbox="uni_pictures" data-title="IE University Segovia Campus Hall">
+                <img src="images/segovia_hall.webp" alt="IE University Segovia Campus Hall">
+            </a>
+            <a href="images/ie_tower.jpg" data-lightbox="uni_pictures" data-title="IE Tower in Madrid's Business Center">
+                <img src="images/ie_tower.jpg" alt="IE Tower in Madrid's Business Center">
+            </a>
+        </div>
+
+<!-- ---------------------------------------------------------------------------------------------- -->
+<!-- STEP 4) Detail my own academic journey at IEU -->
+
+    <!-- STEP 4.1 - Have section about my Bachelor degree and Where I studied over the years. -->
+        <div class="section_me_ie">
+            <h2>My Academic Journey at IEU</h2>
+                <li><strong>Bachelor Degree:</strong> Dual Bachelor Degree in Business Administration and Data Analytics (<a href="https://www.ie.edu/university/studies/academic-programs/dual-degree-in-business-administration-data-and-business-analytics/" target="_blank">BBA DBA</a>) </li>
+                <li><strong>Campuses:</strong> Studied two years in Segovia (Year 1 & 2), currently studying in Madrid (Year 3,4, & 5) </li>
+                <li>Awarded Fellowship/Collaborative Scholarship.</li>
+                <li>IE Foundation Fellows Program.</li>
+                <!-- POTENTIALLY ADDING A MAP WITH A NICE HANDWRITTEN DESIGN (PROBABLY NEED SOME JAVASCRIPT LIBRARY) -->
+        </div>
+        
+        <!-- STEP 4.2 - Section about the relevant courses -->
+        <div class="dropdown_header" onclick="toggleCourses()">
+            <h2>Relevant Courses at IEU</h2>
+            <!-- tried to also use this code below from css w3school but did not work, therefore using the font awesome-->
+            <!-- <i class="arrow"></i> -->
+            <i id="dropdown_arrow" class="fas fa-chevron-down"></i>
+        </div>
+
+        <div id="section_ieu_courses" class="section_ieu_courses"> 
+            
+            <!-- Adding Filter buttons to be able to filter by year and  arrange by grade -->
+            <!-- <div class="filter_buttons">
+                <button onclick="filterByYear('Year 2')">Filter by Year 2</button>
+                <button onclick="filterByYear('Year 3')">Filter by Year 3</button>
+                <button onclick="resetFilter()">Reset Filter</button>
+                <button onclick="sortByGrade()">Sort by Grade</button> 
+            </div>  -->
+            <div class="filter_buttons">
+                <div class="dropdown">
+                    <button class="dropbtn">Filter by Year</button>
+                    <div class="dropdown_content">
+                        <a href="#" onclick="filterByYear('Year 2')">Year 2</a>
+                        <a href="#" onclick="filterByYear('Year 3')">Year 3</a>
+                    </div>
+                </div>
+                <button onclick="resetFilter()">Reset Filter</button>
+                <button onclick="sortByGrade()">Sort by Grade</button>
+            </div>            
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Course</th>
+                        <th>Year</th>
+                        <th>Main Topics Covered</th>
+                        <th>Grade</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Mathematics For Data Management and Analysis</td>
+                        <td>Year 2</td>
+                        <td>Statistics, Data Analysis, Probability</td>
+                        <td>9.1</td>
+                    </tr>
+                    <tr>
+                        <td>Algorithms & Data Structures</td>
+                        <td>Year 2</td>
+                        <td>Sorting, Searching, Complexity</td>
+                        <td>9.0</td>
+                    </tr>
+                    <tr>
+                        <td>Marketing</td>
+                        <td>Year 2</td>
+                        <td>Consumer Behavior, Market Research, Strategy</td>
+                        <td>9.6</td>
+                    </tr>
+                    <tr>
+                        <td>Venture Creation and Planning</td>
+                        <td>Year 2</td>
+                        <td>Business Models, Funding, Startup Planning</td>
+                        <td>9.5</td>
+                    </tr>
+                    <tr>
+                        <td>Advanced Databases</td>
+                        <td>Year 3</td>
+                        <td>SQL, NoSQL, Database Optimization</td>
+                        <td>9.0</td>
+                    </tr>
+                    <tr>
+                        <td>Introduction to Business and Social Analytics</td>
+                        <td>Year 3</td>
+                        <td>Data Analysis, Social Media Analytics</td>
+                        <td>9.1</td>
+                    </tr>
+                    <tr>
+                        <td>Strategies for Competing in Industries and Markets</td>
+                        <td>Year 3</td>
+                        <td>Competitive Analysis, Market Entry</td>
+                        <td>9.2</td>
+                    </tr>
+                    <tr>
+                        <td>Human Capital Management</td>
+                        <td>Year 3</td>
+                        <td>Talent Acquisition, Employee Retention</td>
+                        <td>9.3</td>
+                    </tr>
+                    <tr>
+                        <td>Organizational Behaviour</td>
+                        <td>Year 3</td>
+                        <td>Leadership, Organizational Structure</td>
+                        <td>9.1</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+<!-- ------------------------------------------- -->
+<!-- STEP 5) FOOTER (email address + linkedIn account) -->
+<footer>
+    <!-- LinkedIn Icon -->
+    <a href="https://www.linkedin.com/in/sara-baldovino-8b31631a6" class="icons" target="_blank" aria-label="LinkedIn">
+      <i class="fab fa-linkedin"></i>
+    </a>
+    
+    <!-- Email Icon -->
+    <a href="mailto:sarabaldovino02@gmail.com" aria-label="Email">
+      <i class="fas fa-envelope" ></i>
+    </a>
+</footer>
+
+<!-- ------------------------------------------- -->
+<!-- STEP 6) Linking to Javascript Files -->
+
+    <!-- Lightbox JavaScript File (Code from Week 11 - seen in class) -->
+    <script src="dist/js/lightbox-plus-jquery.js"></script>
+ 
+    <!-- LINK TO THE JAVASCRIPT FILE -->
+    <script src="js/java_file.js"> </script>
+
+</body>
+</html>
