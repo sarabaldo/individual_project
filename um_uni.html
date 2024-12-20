@@ -60,9 +60,27 @@
             <a href="images/um_logo.jpg"  data-lightbox="uni_pictures" data-title="University of Michigan's Logo">
                 <img src="images/um_logo.jpg" alt="University of Michigan's Logo">
             </a>
-            <a href="images/um_school_of_info.jpeg" data-lightbox="uni_pictures" data-title="UM School of Information Building">
+            <!-- <a href="images/um_school_of_info.jpeg" data-lightbox="uni_pictures" data-title="UM School of Information Building">
                 <img src="images/um_school_of_info.jpeg" alt="UM School of Information Building">
+            </a> -->
+            <a href="images/um_tower.jpg" data-lightbox="uni_pictures" data-title="UM's Burton Memorial Tower">
+                <img src="images/um_tower.jpg" alt="UM's Burton Memorial Tower">
             </a>
+            <!-- <a href="images/um_law_building.jpg" data-lightbox="uni_pictures" data-title="UM's Campus of Law">
+                <img src="images/um_law_building.jpg" alt="UM's Campus of Law">
+            </a> -->
+            <a href="images/um_game.jpg" data-lightbox="uni_pictures" data-title="UM Michigan Stadium during Game Day">
+                <img src="images/um_game.jpg" alt="UM Michigan Stadium during Game Day">
+            </a>
+            <!-- <a href="images/um_green.jpg" data-lightbox="uni_pictures" data-title="Green space between UM campuses buildings">
+                <img src="images/um_green.jpg" alt="Green space between UM campuses buildings">
+            </a>
+            <a href="images/um_fall.jpg" data-lightbox="uni_pictures" data-title="Fall colors in Ann Arbor during sunset">
+                <img src="images/um_fall.jpg" alt="Fall colors in Ann Arbor during sunset">
+            </a>
+            <a href="images/um_fall_tree.jpg" data-lightbox="uni_pictures" data-title="Tree details with fall colors in Ann Arbor">
+                <img src="images/um_fall_tree.jpg" alt="Tree details with fall colors in Ann Arbor">
+            </a> --> 
         </div>
 
         <!-- STEP 4) - Have section about my Bachelor degree and Where I studied over the years. -->
@@ -76,27 +94,44 @@
                 </ul>
         </div>
         
-        <div class="uni_images">
-            <!-- <img src="images/um_school_info_2.jpg" alt="UM School of Information Building Early in the Morning"> -->
-            <a href="images/um_tower.jpg" data-lightbox="uni_pictures" data-title="UM's Burton Memorial Tower">
-                <img src="images/um_tower.jpg" alt="UM's Burton Memorial Tower">
-            </a>
-            <a href="images/um_law_building.jpg" data-lightbox="uni_pictures" data-title="UM's Campus of Law">
-                <img src="images/um_law_building.jpg" alt="UM's Campus of Law">
-            </a>
-            <a href="images/um_game.jpg" data-lightbox="uni_pictures" data-title="UM Michigan Stadium during Game Day">
-                <img src="images/um_game.jpg" alt="UM Michigan Stadium during Game Day">
-            </a>
-            <a href="images/um_green.jpg" data-lightbox="uni_pictures" data-title="Green space between UM campuses buildings">
-                <img src="images/um_green.jpg" alt="Green space between UM campuses buildings">
-            </a>
-            <a href="images/um_fall.jpg" data-lightbox="uni_pictures" data-title="Fall colors in Ann Arbor during sunset">
-                <img src="images/um_fall.jpg" alt="Fall colors in Ann Arbor during sunset">
-            </a>
-            <a href="images/um_fall_tree.jpg" data-lightbox="uni_pictures" data-title="Tree details with fall colors in Ann Arbor">
-                <img src="images/um_fall_tree.jpg" alt="Tree details with fall colors in Ann Arbor">
-            </a>
+
+        <!-- ADDING THE TABLE ONCE I HAVE ALL THE GRADES -->
+        <div class="dropdown_header" onclick="toggleCourses()">
+            <h2>Relevant Courses at UM</h2>
+            <!-- tried to also use this code below from css w3school but did not work, therefore using the font awesome-->
+            <!-- <i class="arrow"></i> -->
+            <i id="dropdown_arrow" class="fas fa-chevron-down"></i>
         </div>
+
+        <div id="section_ieu_courses" class="section_ieu_courses">             
+            <table>
+                <thead>
+                    <tr>
+                        <th>Course</th>
+                        <th>Main Topics Covered</th>
+                        <th>Grade</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Web Design, Development, and Accessibility</td>
+                        <td>Responsive design, accessibility, HTML5, CSS3, JavaScript</td>
+                        <td>A</td>
+                    </tr>
+                    <tr>
+                        <td>Putting the H in HCI</td>
+                        <td>Human-computer interaction, user behavior, psychology, interactive systems, design critique</td>
+                        <td>A+</td>
+                    </tr>
+                    <tr>
+                        <td>Information Environments and Work</td>
+                        <td>Industry 4.0, digital transformation, information systems, automation, business processes</td>
+                        <td>A</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
     </div> 
 
 <!-- ------------------------------------------- -->
