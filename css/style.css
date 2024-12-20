@@ -450,33 +450,33 @@ th, td {
 /* STEP 12) Transitions and Transformations */
 
 /* Apply hover and focus effects for all sections (e.g., .container, .section, and images) */
-.container:hover, .container:focus,
+/* .container:hover, .container:focus,
 .section_info:hover, .section_info:focus,
 .section_um_me:hover, .section_um_me:focus,
 .skills_container:hover, .skills_container:focus {
     transform: scale(1.05);
     transition: transform 0.3s ease;
-}
+} */
 
 /* Images in .uni_images and .um_images_mine */
-.uni_images img:hover, .uni_images img:focus,
+/* .uni_images img:hover, .uni_images img:focus,
 .um_images_mine img:hover, .um_images_mine img:focus {
     transform: scale(1.05);
     transition: transform 0.3s ease;
-}
+} */
 
 
 /* Dropdown header in IE University page */
-.dropdown_header:hover, .dropdown_header:focus {
+/* .dropdown_header:hover, .dropdown_header:focus {
     border-bottom: 2px solid var(--primary-color);
     transition: border-bottom 0.3s ease, transform 0.3s ease;
-}
+} */
 
 /* Timeline elements */
-.timeline ul li:hover, .timeline ul li:focus {
+/* .timeline ul li:hover, .timeline ul li:focus {
     transform: scale(1.05);
     transition: transform 0.3s ease;
-}
+} */
 
 
 /* ---------------------------------------- */
